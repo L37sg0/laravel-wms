@@ -18,14 +18,14 @@ return new class extends Migration {
             $table->foreignId(Model::FIELD_PRODUCT_ID)
                 ->constrained(Product::TABLE_NAME)
                 ->onDelete('no action')
-                ->onUpdate('no-action');
+                ->onUpdate('no action');
             $table->foreignId(Model::FIELD_CATEGORY_ID)
             ->constrained(Category::TABLE_NAME)
                 ->onDelete('no action')
-                ->onUpdate('no-action');
+                ->onUpdate('no action');
             $table->timestamps();
 
-            $table->primary([Model::FIELD_PRODUCT_ID, Model::FIELD_CATEGORY_ID]);
+//            $table->primary([Model::FIELD_PRODUCT_ID, Model::FIELD_CATEGORY_ID]);
             $table->index([Model::FIELD_PRODUCT_ID, Model::FIELD_CATEGORY_ID]);
         });
     }
