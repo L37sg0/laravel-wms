@@ -19,4 +19,8 @@ class User extends Authenticatable implements StaticData
     protected $fillable = self::FILLABLE;
     protected $hidden   = self::HIDDEN;
     protected $casts    = self::CASTS;
+
+    public function roles() {
+        return $this->belongsToMany(Role::class, UserRole::TABLE_NAME);
+    }
 }

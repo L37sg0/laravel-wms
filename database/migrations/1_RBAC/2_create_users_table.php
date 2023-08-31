@@ -20,13 +20,13 @@ return new class extends Migration
             $table->string(Model::FIELD_USERNAME, 50)->unique();
             $table->string(Model::FIELD_MOBILE, 15)->unique();
             $table->string(Model::FIELD_EMAIL, 50)->unique();
-            $table->string(Model::FIELD_PASSWORD, 32);
+            $table->string(Model::FIELD_PASSWORD, 100);
             $table->rememberToken();
-            $table->timestamp(Model::FIELD_REGISTERED_AT);
+            $table->timestamp(Model::FIELD_REGISTERED_AT)->nullable();
             $table->timestamp(Model::FIELD_EMAIL_VERIFIED_AT)->nullable();
-            $table->timestamp(Model::FIELD_LAST_LOGIN);
-            $table->tinyText(Model::FIELD_INTRO);
-            $table->text(Model::FIELD_PROFILE);
+            $table->timestamp(Model::FIELD_LAST_LOGIN)->nullable();
+            $table->tinyText(Model::FIELD_INTRO)->nullable();
+            $table->text(Model::FIELD_PROFILE)->nullable();
             $table->timestamps();
         });
     }
