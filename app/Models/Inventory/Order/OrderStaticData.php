@@ -7,7 +7,6 @@ interface OrderStaticData
     public const TABLE_NAME             = 'order';
 
     public const FIELD_ID               = 'id';
-    public const FIELD_USER_ID          = 'user_id';
     public const FIELD_TYPE             = 'type';
     public const FIELD_STATUS           = 'status';
     public const FIELD_SUB_TOTAL        = 'sub_total';
@@ -23,7 +22,6 @@ interface OrderStaticData
     public const FIELD_UPDATED_AT       = 'updated_at';
 
     public const FILLABLE = [
-        self::FIELD_USER_ID,
         self::FIELD_TYPE,
         self::FIELD_STATUS,
         self::FIELD_SUB_TOTAL,

@@ -2,11 +2,11 @@
 
 namespace App\Models\Inventory\Order;
 
-use App\Models\Inventory\Order\OrderItemStaticData as StaticData;
+use App\Models\Inventory\Order\OrderAddressStaticData as StaticData;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class OrderItem extends Model implements StaticData
+class OrderAddress extends Model implements StaticData
 {
     use HasFactory;
 

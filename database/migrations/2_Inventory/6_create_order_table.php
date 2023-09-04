@@ -14,10 +14,6 @@ return new class extends Migration {
     {
         Schema::create(Model::TABLE_NAME, function (Blueprint $table) {
             $table->id();
-            $table->foreignId(Model::FIELD_USER_ID)
-                ->constrained(User::TABLE_NAME)
-                ->onDelete('no action')
-                ->onUpdate('no action');
             $table->smallInteger(Model::FIELD_TYPE)->default(0);
             $table->smallInteger(Model::FIELD_STATUS)->default(0);
             $table->float(Model::FIELD_SUB_TOTAL)->default(0);
@@ -31,7 +27,6 @@ return new class extends Migration {
             $table->text(Model::FIELD_CONTENT)->nullable();
             $table->timestamps();
 
-            $table->index(Model::FIELD_USER_ID);
         });
     }
 

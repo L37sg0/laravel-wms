@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Inventory\Category as Model;
+use App\Models\Inventory\Product\Category as Model;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;

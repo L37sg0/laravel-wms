@@ -16,11 +16,6 @@ return new class extends Migration {
     {
         Schema::create(Model::TABLE_NAME, function (Blueprint $table) {
             $table->id();
-            $table->foreignId(Model::FIELD_PRODUCT_ID)
-                ->index()
-                ->constrained(Product::TABLE_NAME)
-                ->onDelete('no action')
-                ->onUpdate('no action');
             $table->foreignId(Model::FIELD_ITEM_ID)
                 ->index()
                 ->constrained(Item::TABLE_NAME)

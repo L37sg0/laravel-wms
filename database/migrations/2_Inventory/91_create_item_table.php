@@ -33,11 +33,6 @@ return new class extends Migration {
                 ->constrained(Supplier::TABLE_NAME)
                 ->onDelete('no action')
                 ->onUpdate('no action');
-            $table->foreignId(Model::FIELD_ORDER_ID)
-                ->index()
-                ->constrained(Order::TABLE_NAME)
-                ->onDelete('no action')
-                ->onUpdate('no action');
             $table->string(Model::FIELD_SKU, 100);
             $table->float(Model::FIELD_MRP)->default(0);
             $table->float(Model::FIELD_DISCOUNT)->default(0);

@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Inventory\Address as Model;
+use App\Models\Inventory\Order\OrderAddress as Model;
 use App\Models\Inventory\Order\Order;
 use App\Models\RBAC\User;
 use Illuminate\Database\Migrations\Migration;
@@ -15,12 +15,6 @@ return new class extends Migration {
     {
         Schema::create(Model::TABLE_NAME, function (Blueprint $table) {
             $table->id();
-            $table->foreignId(Model::FIELD_USER_ID)
-                ->index()
-                ->nullable()
-                ->constrained(User::TABLE_NAME)
-                ->onDelete('no action')
-                ->onUpdate('no action');
             $table->foreignId(Model::FIELD_ORDER_ID)
                 ->index()
                 ->nullable()

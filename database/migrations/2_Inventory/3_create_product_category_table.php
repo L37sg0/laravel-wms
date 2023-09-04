@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Inventory\Category;
+use App\Models\Inventory\Product\Category;
 use App\Models\Inventory\Product\Product;
 use App\Models\Inventory\Product\ProductCategory as Model;
 use Illuminate\Database\Migrations\Migration;

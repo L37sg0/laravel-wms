@@ -10,7 +10,6 @@ interface ItemStaticData
     public const FIELD_PRODUCT_ID   = 'product_id';
     public const FIELD_BRAND_ID     = 'brand_id';
     public const FIELD_SUPPLIER_ID  = 'supplier_id';
-    public const FIELD_ORDER_ID     = 'order_id';
     public const FIELD_SKU          = 'sku';
     public const FIELD_MRP          = 'mrp';
     public const FIELD_DISCOUNT     = 'discount';
@@ -28,7 +27,6 @@ interface ItemStaticData
         self::FIELD_PRODUCT_ID,
         self::FIELD_BRAND_ID,
         self::FIELD_SUPPLIER_ID,
-        self::FIELD_ORDER_ID,
         self::FIELD_SKU,
         self::FIELD_MRP,
         self::FIELD_DISCOUNT,

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Inventory;
+namespace App\Models\Inventory\Product;
 
 interface CategoryStaticData
 {
