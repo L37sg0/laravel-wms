@@ -21,5 +21,7 @@ interface ProductStaticData
         self::FIELD_CONTENT
     ];
 
-    public const CASTS = [];
+    public const CASTS = [
+        self::FIELD_TYPE => ProductType::class
+    ];
 }

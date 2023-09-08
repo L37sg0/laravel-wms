@@ -27,5 +27,8 @@ interface TransactionStaticData
         self::FIELD_CONTENT
     ];
 
-    public const CASTS = [];
+    public const CASTS = [
+        self::FIELD_TYPE    => TransactionType::class,
+        self::FIELD_STATUS  => TransactionStatus::class
+    ];
 }

@@ -14,6 +14,18 @@ class OrderFactory extends Factory
      */
     public function definition()
     {
-        return [];
+        return [
+            Model::FIELD_TYPE           => '',
+            Model::FIELD_STATUS         => '',
+            Model::FIELD_SUB_TOTAL      => '',
+            Model::FIELD_ITEM_DISCOUNT  => '',
+            Model::FIELD_TAX            => '',
+            Model::FIELD_SHIPPING       => '',
+            Model::FIELD_TOTAL          => '',
+            Model::FIELD_PROMO          => '',
+            Model::FIELD_DISCOUNT       => '',
+            Model::FIELD_GRAND_TOTAL    => '',
+            Model::FIELD_CONTENT        => '',
+        ];
     }
 }

@@ -35,5 +35,8 @@ interface OrderStaticData
         self::FIELD_CONTENT
     ];
 
-    public const CASTS = [];
+    public const CASTS = [
+        self::FIELD_STATUS  => OrderStatus::class,
+        self::FIELD_TYPE    => OrderType::class
+    ];
 }
