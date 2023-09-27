@@ -1,9 +1,8 @@
 <?php
 
+use App\Models\Fulfilment\Order\Order;
+use App\Models\Fulfilment\Order\OrderItem as Model;
 use App\Models\Inventory\Item;
-use App\Models\Inventory\Order\Order;
-use App\Models\Inventory\Order\OrderItem as Model;
-use App\Models\Inventory\Product\Product;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;

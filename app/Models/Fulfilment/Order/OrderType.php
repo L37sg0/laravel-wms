@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Inventory\Order;
+namespace App\Models\Fulfilment\Order;
 
 enum OrderType: int
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Inventory\Order;
+namespace App\Models\Fulfilment\Order;
 
 interface OrderAddressStaticData
 {
@@ -18,6 +18,7 @@ interface OrderAddressStaticData
     public const FIELD_CITY         = 'city';
     public const FIELD_PROVINCE     = 'province';
     public const FIELD_COUNTRY      = 'country';
+    public const FIELD_POSTCODE     = 'postcode';
     public const FIELD_CREATED_AT   = 'created_at';
     public const FIELD_UPDATED_AT   = 'updated_at';
 
@@ -32,7 +33,8 @@ interface OrderAddressStaticData
         self::FIELD_LINE_2,
         self::FIELD_CITY,
         self::FIELD_PROVINCE,
-        self::FIELD_COUNTRY
+        self::FIELD_COUNTRY,
+        self::FIELD_POSTCODE
     ];
 
     public const CASTS = [];

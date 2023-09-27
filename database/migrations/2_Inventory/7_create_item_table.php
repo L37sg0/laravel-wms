@@ -2,10 +2,8 @@
 
 use App\Models\Inventory\Brand;
 use App\Models\Inventory\Item as Model;
-use App\Models\Inventory\Order\Order;
 use App\Models\Inventory\Product\Product;
 use App\Models\Inventory\Supplier;
-use App\Models\RBAC\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;

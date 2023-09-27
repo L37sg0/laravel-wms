@@ -1,8 +1,7 @@
 <?php
 
-use App\Models\Inventory\Order\OrderAddress as Model;
-use App\Models\Inventory\Order\Order;
-use App\Models\RBAC\User;
+use App\Models\Fulfilment\Order\Order;
+use App\Models\Fulfilment\Order\OrderAddress as Model;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -31,6 +30,7 @@ return new class extends Migration {
             $table->string(Model::FIELD_CITY, 50)->nullable();
             $table->string(Model::FIELD_PROVINCE, 50)->nullable();
             $table->string(Model::FIELD_COUNTRY, 50)->nullable();
+            $table->string(Model::FIELD_POSTCODE, 10);
             $table->timestamps();
         });
     }

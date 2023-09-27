@@ -8,6 +8,7 @@ interface TransactionStaticData
 
     public const FIELD_ID           = 'id';
     public const FIELD_USER_ID      = 'user_id';
+    public const FIELD_ITEM_ID      = 'item_id';
     public const FIELD_ORDER_ID     = 'order_id';
     public const FIELD_CODE         = 'code';
     public const FIELD_TYPE         = 'type';
@@ -19,6 +20,7 @@ interface TransactionStaticData
 
     public const FILLABLE = [
         self::FIELD_USER_ID,
+        self::FIELD_ITEM_ID,
         self::FIELD_ORDER_ID,
         self::FIELD_CODE,
         self::FIELD_TYPE,
@@ -29,6 +31,8 @@ interface TransactionStaticData
 
     public const CASTS = [
         self::FIELD_TYPE    => TransactionType::class,
-        self::FIELD_STATUS  => TransactionStatus::class
+        self::FIELD_STATUS  => TransactionStatus::class,
+        self::FIELD_MODE    => TransactionMode::class,
+        self::FIELD_CODE    => TransactionCode::class
     ];
 }

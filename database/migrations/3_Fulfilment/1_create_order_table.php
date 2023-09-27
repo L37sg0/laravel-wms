@@ -1,8 +1,6 @@
 <?php
 
-use App\Models\Inventory\Order\Order;
-use App\Models\Inventory\Transaction as Model;
-use App\Models\RBAC\User;
+use App\Models\Fulfilment\Order\Order as Model;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,22 +13,19 @@ return new class extends Migration {
     {
         Schema::create(Model::TABLE_NAME, function (Blueprint $table) {
             $table->id();
-            $table->foreignId(Model::FIELD_USER_ID)
-                ->index()
-                ->constrained(User::TABLE_NAME)
-                ->onDelete('no action')
-                ->onUpdate('no action');
-            $table->foreignId(Model::FIELD_ORDER_ID)
-                ->index()
-                ->constrained(Order::TABLE_NAME)
-                ->onDelete('no action')
-                ->onUpdate('no action');
-            $table->string(Model::FIELD_CODE, 100);
             $table->smallInteger(Model::FIELD_TYPE)->default(0);
-            $table->smallInteger(Model::FIELD_MODE)->default(0);
             $table->smallInteger(Model::FIELD_STATUS)->default(0);
+            $table->float(Model::FIELD_SUB_TOTAL)->default(0);
+            $table->float(Model::FIELD_ITEM_DISCOUNT)->default(0);
+            $table->float(Model::FIELD_TAX)->default(0);
+            $table->float(Model::FIELD_SHIPPING)->default(0);
+            $table->float(Model::FIELD_TOTAL)->default(0);
+            $table->string(Model::FIELD_PROMO, 50)->nullable();
+            $table->float(Model::FIELD_DISCOUNT)->default(0);
+            $table->float(Model::FIELD_GRAND_TOTAL)->default(0);
             $table->text(Model::FIELD_CONTENT)->nullable();
             $table->timestamps();
+
         });
     }
 

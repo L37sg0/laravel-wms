@@ -3,12 +3,16 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Fulfilment\Order\Order;
+use App\Models\Fulfilment\Order\OrderAddress;
+use App\Models\Fulfilment\Order\OrderItem;
 use App\Models\Inventory\Brand;
 use App\Models\Inventory\Item;
 use App\Models\Inventory\Product\Category;
 use App\Models\Inventory\Product\Product;
 use App\Models\Inventory\Product\ProductMeta;
 use App\Models\Inventory\Supplier;
+use App\Models\Inventory\Transaction;
 use App\Models\RBAC\Permission;
 use App\Models\RBAC\Role;
 use App\Models\RBAC\User;
@@ -59,6 +63,8 @@ class DatabaseSeeder extends Seeder
         $this->seedInventoryBrand();
         $this->seedInventoryProduct();
         $this->seedInventoryItem();
+        $this->seedInventoryOrder();
+        $this->seedInventoryTransactions();
 
     }
 
@@ -107,6 +113,9 @@ class DatabaseSeeder extends Seeder
 
     }
 
+    /**
+     * @return void
+     */
     public function seedInventoryItem()
     {
         foreach (Product::all() as $product) {
@@ -114,9 +123,37 @@ class DatabaseSeeder extends Seeder
         }
     }
 
+    /**
+     * @return void
+     */
     public function seedInventoryOrder()
     {
+        Order::factory(100)->create();
 
+        foreach (Order::all() as $order) {
+            OrderAddress::factory(1)->create([
+                OrderAddress::FIELD_ORDER_ID => $order->getAttribute(Order::FIELD_ID)
+            ]);
+
+            $itemIds = Item::all()->pluck(Item::FIELD_ID)->toArray();
+            OrderItem::factory(rand(1,2))->create([
+                OrderItem::FIELD_ITEM_ID   => $itemId = rand(min($itemIds),max($itemIds)),
+                OrderItem::FIELD_ORDER_ID  => $order->getAttribute(Order::FIELD_ID),
+                OrderItem::FIELD_SKU       => Item::find($itemId)->getAttribute(Item::FIELD_SKU),
+                OrderItem::FIELD_PRICE     => Item::find($itemId)->getAttribute(Item::FIELD_PRICE),
+                OrderItem::FIELD_DISCOUNT  => Item::find($itemId)->getAttribute(Item::FIELD_DISCOUNT),
+            ]);
+        }
+
+    }
+
+    public function seedInventoryTransactions()
+    {
+        foreach (Order::all() as $order) {
+            Transaction::factory(rand(1,4))->create([
+                Transaction::FIELD_ORDER_ID => $order->getAttribute(Order::FIELD_ID)
+            ]);
+        }
     }
 
 }
